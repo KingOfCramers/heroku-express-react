@@ -1,0 +1,43 @@
+.ReactModalPortal > div {
+    opacity: 0;
+}
+
+// Whenever a change is made to opacity, make it take 200ms.
+.ReactModalPortal .ReactModal__Overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 300ms ease-in-out;
+}
+
+// Target the opened state
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+// Target teh closed state (prior to removal from the DOM. We've delayed removal by 300ms (in our OptionModal component) to allow this to take place).
+// .ReactModalPortal .ReactModal__Overlay--before-close {
+//   opacity: 0;
+// }
+
+// To target your own class, you must add a class to the modal in the component.
+
+.modal {
+    background: $light-blue;
+    color: white;
+    max-width: 30rem;
+    outline: none;
+    padding: $l-size;
+    text-align: center;
+}
+
+.modal__title {
+    margin: 0 0 $l-size 0;
+}
+
+.modal__body {
+    margin: 0 0 $l-size 0;
+    font-size: 2rem;
+    font-weight: 300;
+    word-break: break-all;
+}
