@@ -5,4 +5,4 @@ const publicPath = path.join(__dirname, "..", "public");
 const port = 3000;
 
 app.use(express.static(publicPath));
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Listening on port ${port}`));
